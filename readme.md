@@ -12,7 +12,6 @@ acode@gmail.com
 ### Todo logic
 * the app shows a random cheerful sentence from an internal list. You can click to "next sentence"
 * the app shows a famous interesting quote from an internal list. you can click to "next sentence"
-*
 * the app let you input your own list that helps you remember it in the future
 * you can program the app to remind you every X time about a sentences
 * the system uses a randomly cheerful generated sentences
@@ -21,6 +20,6 @@ acode@gmail.com
 ### Todo design
 * create an interesting interface. Likely using gradients, but maybe we can make the gradient animated
 * add some custom elements like icons or even drawings. Draw some characters for each type of sentence
-** clever-like guy or girl for the quotes
-** smiling guy or girl for the cheerful quotes
-** check another type for custom list
+  * clever-like guy or girl for the quotes
+  * smiling guy or girl for the cheerful quotes
+  * check another type for custom list
