@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_0dc7c5c20bb2714236d1ffbffb76663e40687ca1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.10.0\7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e\okhttp-3.10.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\okhttp-3.10.0_82bf10fb3d60231a8c8c1e563b45b157d14dc191.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\67e42f6f177dc8788081c87a93af6398d96a3c57\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="1c9837ec75b2273699379c2ba0ae63d669b4f08c">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_b0b699460a9bf6b81ba087eb4baa09141b383d03.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\c75f37e5525f759564f809837ec6ec7a178ae9a5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_b1ff7339a210ff4e12902314d165935f5e458322.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\9fecc1f7454ab7f85330b1deb993966a88c16aca\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e7a850c25a7efbd533c496ab482c980fdafac58d">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_8dd53f80e7620052f6a38d133318ee773dc465c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\5efbfd8f490ad19260ad4246e2be5ad57b04a64a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_43529c7bd9b1550708fea9a277cbd3ad62177e21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\9059dec46831b2d8ff3e4b25845d4ded076ebf06\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_5d413b9ac5ea1102c37d6c2bee69b4b671272b67.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\9fecc1f7454ab7f85330b1deb993966a88c16aca\output\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_84b248d403eb3791706439eef131fde629bcc9d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_c6dac42b0d2b118081031de89a26185360377b24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.14.0\102d7be47241d781ef95f1581d414b0943053130\okio-1.14.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\okio-1.14.0_d83ae8718ff98346b36575a14816c7fd7bdbd1f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\10f1d9779c87fc215a0f0ef71474effd53325d6a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_c101286cc211bf274c396433895942a12e8d49e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\4cfd72fd7b7f8bcb6eb29408390c37c565e1b456\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_443b19f5c74f38c081b34ea15414d5cfa54ce5d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_fba00ed286bcb3a5b239195d0c5f59b1a877aa4f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_7d57edc41af7d75d18ca055c53c8f8e9c5086a15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\4b2d188b112fb921696f4c42aa57e589d753613d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="dc6c0959ecc7b21932675183573b2bcecf2687b9">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_65857e7b9830c1071d58085a698ace9cc38e453b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_616d659a06a710b9512f840a711d5285d9215c0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\f27deddca7718d1ca43b3bedaab32597083a9c28\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_e0a9e15fc31e67cd76655bfbb66b31851e2f1624.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\4d1327e0b248f64095ca45031e0877e1f1dbf14b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_72cedc6348d0643ada60f2c0d3fed3704dd7ffc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\fcf7cb1f30eb62da36202cad468dbf3a2fcb5ff1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f80a752d1333efd4fb9b87da63e73909acb151af">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_c7c1c427d6935a25c4061e772236a7f2a6c2a3af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\3c62b5ec37077cbd7be5a1477bd21cd641473b20\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="da59c80e4a1c8df62d2b4188ef3efddab8afa236">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_a8047f8e0b75c1b30a63d907f1caaa2da4a38cd8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\2e9b8f33129a1e4661a8e42223839d8d5aedb73d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="ae15c560bc6685007440d8a70686f8348bafd791">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_827f37abddcd2e4d7a3b97115e502753b386e908.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.10.0\ec614c05825ddd2267677a99f585d3913474b125\okhttp-urlconnection-3.10.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="ec614c05825ddd2267677a99f585d3913474b125">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.10.0_621901231e820b0b0babb92e4bead76536f7c07e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\19da17937289d0e91447c4b75975275ad2ef7830\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_9b848ab9d0869e526ee3cd3d208669beed553ec4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\baae4040171e6c33da6b10ba5c8253edb98e1289\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="87382214d92be4e3c931cb6aa7aa4e827bc179b7">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_f4084ee5b1bdfede702e2ba0fd003ad3c05b6f3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\f84a8cc6e38d208212c959d466f32c20c9fffcc0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_2dbd9bdbd1e3f5965cac74d6d9a7cf2bc0c0c4a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\53b0afef683df9aa9a76a9866214400a20bf00a2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_a27b11502906decf99a3d48aab88de7a78a1a57c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_2a87ce547ae760f5f5feb005d385efaa1a2771a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_9035ff47fb031f9c9ebbb9626bd9d2c0b24bffc8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\97adf4697bb728b758ff792121626b296499f345\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_ed32cd564beae1b0ed0b38e9dda6ccb36d027500.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ancode\.android\build-cache\be4aa345bf6a905bdfc7611ddb12b95df5c78487\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9803a14716e9f462afb5742811f3456c39f3be3a">
+        <dex dex="C:\projects\react-native\cheerio2\cheerio\android\app\build\intermediates\pre-dexed\debug\classes_18dac3e1725abebbd38173454c2c73d76af0fd67.jar" />
+    </item>
+
+</items>

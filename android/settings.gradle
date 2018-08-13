@@ -1,0 +1,3 @@
+rootProject.name = 'cheerio'
+
+include ':app'
