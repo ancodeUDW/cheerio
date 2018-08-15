@@ -25,3 +25,7 @@ acode@gmail.com
   * clever-like guy or girl for the quotes
   * smiling guy or girl for the cheerful quotes
   * check another type for custom list
+
+
+### Note:
+* avoid using react-native@0.56.0 if you are developing in windows, because as for today looks like it is not working
