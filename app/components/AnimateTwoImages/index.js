@@ -1,4 +1,5 @@
 import React from 'react';
+import * as R from 'ramda';
 import { Button, StyleSheet, Text, View, Image } from 'react-native';
 import styled from "styled-components";
 
@@ -9,31 +10,43 @@ export default class AnimateTwoImages extends React.Component {
         this.state = {
             showFirst: true,
         };
-
+        this.mounted = false;
         this.goToAbout = this.goToAbout.bind(this);
         this.initAnimation = this.initAnimation.bind(this);
 
     }
 
     componentDidMount(){
+        this.mounted = true;
         this.initAnimation();
     }
 
-    initAnimation(){
-        let showFirst = this.state.showFirst;
-        
-        const animateCycle = () => {
-            let myTimeout = showFirst ? 1000 : 300;
-            
-            setTimeout(() => {
-                this.setState({ showFirst });
-                animateCycle();
-            }, myTimeout);
-            showFirst = !showFirst;
+    componentWillUnmount(){
+        this.mounted = false;
+    }
 
+    initAnimation(){
+        let {timming} = this.props;
+        let showFirst = this.state.showFirst;
+        timming = R.isEmpty(timming) ? 1000 : timming;
+
+
+        const animateCycle = () => {
+            let myTimeout = showFirst ? timming : 300;
+            if (this.mounted){ // dont repeat the cycle if is not mounted
+                setTimeout(() => this.changeFrame(showFirst, animateCycle), myTimeout);
+                showFirst = !showFirst;
+            }
         };
 
         animateCycle();
+    }
+
+    changeFrame(showFirst, animateCycle){
+        if (this.mounted) { // if is not mounted, dont set the state
+            this.setState({showFirst});
+            animateCycle();
+        }
     }
 
     render() {
@@ -60,14 +73,15 @@ export default class AnimateTwoImages extends React.Component {
 const StyledView = styled.View`
   height: 100px;
   width: 100%;
+  padding: 10px;
 `;
 
 const AbsolutePosView = styled.View`
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
   align-items: center;
   justify-content: center;    
 `;
@@ -75,6 +89,7 @@ const AbsolutePosView = styled.View`
 const StyledImage = styled.Image`
   resize-mode: contain;
   width: 90%;
+  height: 100%;
 `;
 
 

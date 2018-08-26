@@ -1,57 +1,69 @@
-import React from 'react';
-import { Button, StyleSheet, Text, View, Image } from 'react-native';
-import styled from "styled-components";
-import AnimateTwoImages from 'app/components/AnimateTwoImages';
+import React                from 'react';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import styled               from "styled-components";
+import AnimateTwoImages     from 'app/components/AnimateTwoImages';
+import GradientBackground           from 'app/components/GradientBackground';
 
-let faceOpen  = require('app/multimedia/face1.png');
-let faceClosed  = require('app/multimedia/face2.png');
+let faceOpenImg    = require('app/multimedia/startScreen/face1.png');
+let faceClosedImg  = require('app/multimedia/startScreen/face2.png');
+let logoImg        = require('app/multimedia/startScreen/logo.png');
 
 export default class App extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            faceCloseEyes: false,
         };
 
-        this.goToAbout = this.goToAbout.bind(this);
-
-        setInterval(() => {
-            this.setState(previousState => {
-                return { faceCloseEyes: !previousState.faceCloseEyes };
-            });
-        }, 1000);
+        this.goToChatScreen = this.goToChatScreen.bind(this);
     }
 
     render() {
-        let {faceCloseEyes} = this.state;
         return (
-            <StyledView>
-                <StyledAnimateTwoImages
-                    timming = {1000}
-                    image1  = {faceOpen}
-                    image2  = {faceClosed}
-                />
-                {/*<StyledImage source={faceCloseEyes ? faceClosed : faceOpen}/>*/}
-                <Button
-                    title="About this app"
-                    onPress={this.goToAbout}
-                />
-            </StyledView>
+            <GradientBackground>
+                <StyledTouchableOpacity
+                    onPress={this.goToChatScreen}
+                >
+                    <StyledAnimateTwoImages
+                        timming = {1000}
+                        image1  = {faceOpenImg}
+                        image2  = {faceClosedImg}
+                    />
+
+                    <StyledImg
+                        source = {logoImg}
+                    />
+                </StyledTouchableOpacity>
+            </GradientBackground>
         );
     }
 
-    goToAbout(){
+    goToChatScreen(){
         let {navigation} = this.props;
-        navigation.navigate('About');
+        navigation.navigate('Home');
     }
 }
+
+const StyledTouchableOpacity = styled.TouchableOpacity`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const StyledView = styled.View`
   background-color: #ffbeb8;
   align-items: center;
   justify-content: center;        
   flex: 1;
+`;
+
+const StyledImg = styled.Image`
+  width: 60%;
+  height: 101px;
+  resize-mode: contain;
+  margin-top: 20%;
 `;
 
 const StyledAnimateTwoImages = styled(AnimateTwoImages)`

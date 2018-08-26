@@ -3,8 +3,7 @@ import { Button, StyleSheet, Text, View, Image, TouchableOpacity, StatusBar  } f
 import { Dimensions }       from 'react-native'
 import styled               from "styled-components";
 import AnimateTwoImages     from 'app/components/AnimateTwoImages';
-import GradientBackground   from 'app/components/GradientBackground';
-import ConvoScreen          from 'app/components/ConvoScreen';
+import GradientBackground           from 'app/components/GradientBackground';
 import ImageButton          from 'app/components/ImageButton';
 
 let candy          = require('app/multimedia/home/candy.png');
@@ -15,27 +14,59 @@ let smileSad       = require('app/multimedia/common/smiles/sad.png');
 let smileNeutral   = require('app/multimedia/common/smiles/neutral.png');
 let smileHappy     = require('app/multimedia/common/smiles/happy.png');
 
-export default class SadConvo extends React.Component {
+export default class Home extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
         };
+
+        this.goToChatScreen = this.goToChatScreen.bind(this);
     }
 
     render() {
-        let {navigation} = this.props;
-
         return (
+            <GradientBackground>
+                <StatusBar
+                    backgroundColor="blue"
+                    barStyle="light-content"
+                    hidden={true}
+                />
+                <StyledPanelView
+                    source = {panel}
+                    imageStyle = {{ resizeMode: 'stretch'}}
+                >
+                    <StyledText>Hello! How do you feel today?</StyledText>
 
-            <ConvoScreen
-                CharImg1={candy}
-                CharImg2={candy2}
-                blinkTime={3000}
-                textMsg={"Hello! How do you feel today? :)"}
-                navigation={navigation}
-            />
+                </StyledPanelView>
+                <StyledBottomPanelImage
+                    source = {bottomPanel}
+                />
+
+                <StyledCandy
+                    timming = {2000}
+                    image1  = {candy}
+                    image2  = {candy2}
+                />
+
+                <GreyPanel>
+                    <StyledImageButton
+                        source = {smileHappy}
+                    />
+                    <StyledImageButton
+                        source = {smileNeutral}
+                    />
+                    <StyledImageButton
+                        source = {smileSad}
+                    />
+                </GreyPanel>
+            </GradientBackground>
         );
+    }
+
+    goToChatScreen(){
+        let {navigation} = this.props;
+        navigation.navigate('Home');
     }
 }
 
