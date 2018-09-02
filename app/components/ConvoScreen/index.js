@@ -29,7 +29,12 @@ class ConvoScreen extends React.Component {
     }
 
     render() {
-        let {CharImg1, CharImg2, blinkTime, textMsg, panelStyle, imageStyle, onPanelPress} = this.props;
+        let {CharImg1, CharImg2,
+            blinkTime, textMsg,
+            panelStyle, imageStyle,
+            onPanelPress, showBottom,
+            showTop, textSource,
+            sourceStyle} = this.props;
 
 
 
@@ -39,21 +44,23 @@ class ConvoScreen extends React.Component {
                     textMsg = {textMsg}
                     style   = {{...panelStyle, width: '90%'}}
                     onPress = {onPanelPress}
+                    show    = {showTop}
                 />
 
                 <AnimatedChar
                     timming = {blinkTime}
                     image1  = {CharImg1}
                     image2  = {CharImg2}
-                    style   = {imageStyle || {}}
+                    style   = {imageStyle}
                 />
 
-                {/*<ComicPanel*/}
-                    {/*textMsg = {textMsg}*/}
-                    {/*style   = {{...panelStyle, width: '90%' }}*/}
-                    {/*onPress = {onPanelPress}*/}
-                    {/*panelDirection = {"TOP"}*/}
-                {/*/>*/}
+                <ComicPanel
+                    textMsg = {textSource}
+                    style   = {{...sourceStyle, width: '90%' }}
+                    onPress = {onPanelPress}
+                    panelDirection = {"TOP"}
+                    show    = {showBottom}
+                />
 
                 <GreyPanel>
                     <StyledImageButton
@@ -97,8 +104,6 @@ const GREY_PANEL_MARGINS = 25;
 
 const AnimatedChar = styled(AnimateTwoImages)`
   width: 90%;
-  flex: 1.5;
-  ${props => !R.isNil(props.style) ? props.style : null}
 `;
 
 const GreyPanel = styled.View`
@@ -125,9 +130,13 @@ ConvoScreen.defaultProps = {
     // CharImg2,
     // blinkTime,
     textMsg: "test message",
+    textSource: "test source",
     panelStyle: {},
     imageStyle: {},
-    onPanelPress: () => {}
+    sourceStyle: {},
+    onPanelPress: () => {},
+    showTop: true,
+    showBottom: false,
 };
 
 

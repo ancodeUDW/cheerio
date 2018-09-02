@@ -9,11 +9,6 @@ import ImageButton          from 'app/components/ImageButton';
 
 let candy          = require('app/multimedia/home/candy.png');
 let candy2          = require('app/multimedia/home/candy2.png');
-let panel          = require('app/multimedia/common/panel.png');
-let bottomPanel    = require('app/multimedia/common/panelBottom.png');
-let smileSad       = require('app/multimedia/common/smiles/sad.png');
-let smileNeutral   = require('app/multimedia/common/smiles/neutral.png');
-let smileHappy     = require('app/multimedia/common/smiles/happy.png');
 
 export default class SadConvo extends React.Component {
 

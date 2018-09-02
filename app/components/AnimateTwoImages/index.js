@@ -71,7 +71,7 @@ export default class AnimateTwoImages extends React.Component {
 }
 
 const StyledView = styled.View`
-  height: 100px;
+  flex: 1;
   width: 100%;
   padding: 10px;
 `;

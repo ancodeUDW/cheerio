@@ -1,18 +1,17 @@
 import React                from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity, StatusBar  } from 'react-native';
-import { Dimensions }       from 'react-native'
-import styled               from "styled-components";
 import ConvoScreen          from 'app/components/ConvoScreen';
 
-let chups          = require('app/multimedia/happy/chups.png');
-let chups2         = require('app/multimedia/happy/chups2.png');
+let candy          = require('app/multimedia/home/candy.png');
+let candy2          = require('app/multimedia/home/candy2.png');
+
 
 export default class SadConvo extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            message: ''
+            message: '',
+            source: '',
         };
         this.mount = false;
 
@@ -41,9 +40,11 @@ export default class SadConvo extends React.Component {
             .then(result => result.json())
             .then(result =>{
                 if (this.mount){
-                    console.log("show, dont tell");
                     console.log(result);
-                    this.setState({ message: `${result[0].quote}\n\nAutor:${result[0].author}` }); // result.status, result.headers, result.body});
+                    this.setState({
+                        message: `${result[0].quote}`,
+                        source:  `${result[0].author}`
+                    }); // result.status, result.headers, result.body});
                 }
             });
     }
@@ -54,18 +55,22 @@ export default class SadConvo extends React.Component {
 
     render() {
         let {navigation} = this.props;
-        let {message} = this.state;
+        let {message, source} = this.state;
 
         return (
             <ConvoScreen
-                CharImg1={chups}
-                CharImg2={chups2}
-                blinkTime={3000}
-                textMsg={message}
-                navigation = {navigation}
-                panelStyle={{flex:1}}
-                imageStyle={{flex:3}}
-                goHappy = {this.callQuote}
+                CharImg1    = {candy}
+                CharImg2    = {candy2}
+                blinkTime   = {3000}
+                textMsg     = {message}
+                textSource  = {source}
+                showTop     = {true}
+                showBottom  = {true}
+                navigation  = {navigation}
+                panelStyle  = {{flex:1}}
+                sourceStyle = {{height: 10}}
+                imageStyle  = {{flex:2}}
+                goHappy     = {this.callQuote}
             />
         );
     }

@@ -28,8 +28,10 @@ class ComicPanel extends React.Component {
     }
 
     render() {
-        let {textMsg, style, onPanelPress, panelDirection} = this.props;
-
+        let {textMsg, style, onPanelPress, panelDirection, show} = this.props;
+        if (!show){
+            return null
+        }
         return (
             <StyledView style={style}>
                 <StyledTopPanelImage
@@ -106,6 +108,7 @@ const StyledPanelImage = styled.Image`
   width: 100%;
   resize-mode: contain;
   z-index: 10;
+  align-items: center;
   display: ${props => props.hide ? 'none' : 'flex'}
 `;
 
@@ -118,7 +121,8 @@ const StyledTopPanelImage = styled(StyledPanelImage)`
 `;
 
 ComicPanel.defaultProps = {
-    panelDirection: 'BOTTOM'
+    panelDirection: 'BOTTOM',
+    show: true,
 };
 
 export default ComicPanel;

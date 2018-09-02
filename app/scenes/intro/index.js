@@ -30,9 +30,9 @@ export default class App extends React.Component {
                         image2  = {faceClosedImg}
                     />
 
-                    <StyledImg
-                        source = {logoImg}
-                    />
+                    {/*<StyledImg*/}
+                        {/*source = {logoImg}*/}
+                    {/*/>*/}
                 </StyledTouchableOpacity>
             </GradientBackground>
         );
