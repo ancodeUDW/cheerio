@@ -7,6 +7,7 @@ import styled               from "styled-components";
 import AnimateTwoImages     from 'app/components/AnimateTwoImages';
 import GradientBackground   from 'app/components/GradientBackground';
 import ImageButton          from 'app/components/ImageButton';
+import ComicPanel           from 'app/components/ComicPanel';
 
 let panel          = require('app/multimedia/common/panel.png');
 let bottomPanel    = require('app/multimedia/common/panelBottom.png');
@@ -14,7 +15,8 @@ let smileSad       = require('app/multimedia/common/smiles/sad.png');
 let smileNeutral   = require('app/multimedia/common/smiles/neutral.png');
 let smileHappy     = require('app/multimedia/common/smiles/happy.png');
 
-export default class ConvoScreen extends React.Component {
+
+class ConvoScreen extends React.Component {
 
     constructor(props){
         super(props);
@@ -27,26 +29,16 @@ export default class ConvoScreen extends React.Component {
     }
 
     render() {
-        let {CharImg1, CharImg2, blinkTime, textMsg, panelStyle, imageStyle} = this.props;
+        let {CharImg1, CharImg2, blinkTime, textMsg, panelStyle, imageStyle, onPanelPress} = this.props;
+
+
 
         return (
             <GradientBackground>
-                <StyledPanelView
-                    source = {panel}
-                    imageStyle = {{ resizeMode: 'stretch'}}
-                    style={panelStyle || {}}
-                >
-                    <ScrollView
-                        contentContainerStyle={{width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex', flex: 1}}
-                    >
-                        <View>
-                            <StyledText>{textMsg}</StyledText>
-                        </View>
-                    </ScrollView>
-
-                </StyledPanelView>
-                <StyledBottomPanelImage
-                    source = {bottomPanel}
+                <ComicPanel
+                    textMsg = {textMsg}
+                    style   = {{...panelStyle, width: '90%'}}
+                    onPress = {onPanelPress}
                 />
 
                 <AnimatedChar
@@ -55,6 +47,13 @@ export default class ConvoScreen extends React.Component {
                     image2  = {CharImg2}
                     style   = {imageStyle || {}}
                 />
+
+                {/*<ComicPanel*/}
+                    {/*textMsg = {textMsg}*/}
+                    {/*style   = {{...panelStyle, width: '90%' }}*/}
+                    {/*onPress = {onPanelPress}*/}
+                    {/*panelDirection = {"TOP"}*/}
+                {/*/>*/}
 
                 <GreyPanel>
                     <StyledImageButton
@@ -96,40 +95,9 @@ export default class ConvoScreen extends React.Component {
 
 const GREY_PANEL_MARGINS = 25;
 
-const StyledPanelView = styled.View`
-  position: relative;
-  width: 90%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: 50px;
-  border-color: #6f1a2f;
-  border-width: 7px;
-  margin-top: ${GREY_PANEL_MARGINS}px;
-  padding: 15px;
-`;
-
-
-const StyledText = styled.Text`
-  text-align: center;
-  color: #6f1a2f;
-  font-size: 20px;
-  font-weight: bold;
-`;
-
-
-const StyledBottomPanelImage = styled.Image`
-  height: 60px;
-  width: 100%;
-  margin-top: -7px;
-  resize-mode: contain;
-`;
-
 const AnimatedChar = styled(AnimateTwoImages)`
   width: 90%;
-  flex: 1;
+  flex: 1.5;
   ${props => !R.isNil(props.style) ? props.style : null}
 `;
 
@@ -152,5 +120,17 @@ const StyledImageButton = styled(ImageButton)`
   height: 50px;
 `;
 
+ConvoScreen.defaultProps = {
+    // CharImg1,
+    // CharImg2,
+    // blinkTime,
+    textMsg: "test message",
+    panelStyle: {},
+    imageStyle: {},
+    onPanelPress: () => {}
+};
+
+
+export default ConvoScreen
 
 
