@@ -6,7 +6,7 @@ import GradientBackground           from 'app/components/GradientBackground';
 
 let faceOpenImg    = require('app/multimedia/startScreen/face1.png');
 let faceClosedImg  = require('app/multimedia/startScreen/face2.png');
-let logoImg        = require('app/multimedia/startScreen/logo.png');
+// let logoImg        = require('app/multimedia/startScreen/logo.png');
 
 export default class App extends React.Component {
 

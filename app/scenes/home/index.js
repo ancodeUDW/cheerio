@@ -7,8 +7,8 @@ import GradientBackground   from 'app/components/GradientBackground';
 import ConvoScreen          from 'app/components/ConvoScreen';
 import ImageButton          from 'app/components/ImageButton';
 
-let candy          = require('app/multimedia/home/candy.png');
-let candy2          = require('app/multimedia/home/candy2.png');
+let candy          = require('app/multimedia/candies/candy.png');
+let candy2          = require('app/multimedia/candies/candy2.png');
 let panel          = require('app/multimedia/common/panel.png');
 let bottomPanel    = require('app/multimedia/common/panelBottom.png');
 let smileSad       = require('app/multimedia/common/smiles/sad.png');

@@ -7,8 +7,8 @@ import GradientBackground   from 'app/components/GradientBackground';
 import ConvoScreen          from 'app/components/ConvoScreen';
 import ImageButton          from 'app/components/ImageButton';
 
-let chups          = require('app/multimedia/happy/chups.png');
-let chups2         = require('app/multimedia/happy/chups2.png');
+let muffin          = require('app/multimedia/candies/muffin.png');
+let muffin2         = require('app/multimedia/candies/muffin2.png');
 
 export default class SadConvo extends React.Component {
 
@@ -23,8 +23,8 @@ export default class SadConvo extends React.Component {
 
         return (
             <ConvoScreen
-                CharImg1={chups}
-                CharImg2={chups2}
+                CharImg1={muffin}
+                CharImg2={muffin2}
                 blinkTime={3000}
                 textMsg={":|"}
                 navigation = {navigation}

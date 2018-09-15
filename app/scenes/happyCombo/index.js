@@ -1,8 +1,8 @@
 import React                from 'react';
 import ConvoScreen          from 'app/components/ConvoScreen';
 
-let candy          = require('app/multimedia/home/candy.png');
-let candy2          = require('app/multimedia/home/candy2.png');
+let candy          = require('app/multimedia/candies/candy.png');
+let candy2          = require('app/multimedia/candies/candy2.png');
 
 
 export default class SadConvo extends React.Component {
