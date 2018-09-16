@@ -1,53 +1,32 @@
-import React                from 'react';
-import ConvoScreen          from 'app/components/ConvoScreen';
+import React                        from 'react';
+import ConvoScreen                  from 'app/components/ConvoScreen';
+import cheerioSentencesService      from 'app/services/cheerioSentences';
 
-let candy          = require('app/multimedia/candies/candy.png');
+const quotesGenerator  = cheerioSentencesService.quotesGenerator;
+
+let candy           = require('app/multimedia/candies/candy.png');
 let candy2          = require('app/multimedia/candies/candy2.png');
 
 
-export default class SadConvo extends React.Component {
+export default class HappyConvo extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            message: '',
-            source: '',
-        };
-        this.mount = false;
 
-        this.callQuote = this.callQuote.bind(this);
+        let myQuote = quotesGenerator.getRandomSentence();
+
+        this.state = {
+            message:    myQuote.quote,
+            source:     myQuote.author,
+        };
+
+        this.createRandomSentence = this.createRandomSentence.bind(this);
     }
 
     componentDidMount(){
-        this.mount = true;
-        this.callQuote();
     }
 
-    callQuote(){
-        fetch('https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=10',
-            {
-                method: 'POST',
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "X-Mashape-Key": "uLp7KmpJutmshfjHLdHGNM4TVlRQp1PoU8fjsn9c4eLGzIaBdr"
-                },
-                body: JSON.stringify({
-                    cat: 'famous',
-                    count: '10'
-                })
-            })
-            .then(result => result.json())
-            .then(result =>{
-                if (this.mount){
-                    console.log(result);
-                    this.setState({
-                        message: `${result[0].quote}`,
-                        source:  `${result[0].author}`
-                    }); // result.status, result.headers, result.body});
-                }
-            });
-    }
+    // todo: this will be made in the service from now on
 
     componentWillUnmount(){
         this.mount = false;
@@ -65,13 +44,23 @@ export default class SadConvo extends React.Component {
                 textMsg     = {message}
                 textSource  = {source}
                 showTop     = {true}
-                showBottom  = {true}
+                showBottom  = {false}
                 navigation  = {navigation}
-                panelStyle  = {{flex:1}}
+                panelStyle  = {{flex:3}}
                 sourceStyle = {{height: 10}}
-                imageStyle  = {{flex:2}}
-                goHappy     = {this.callQuote}
+                imageStyle  = {{flex: 1}}
+                goToHappy   = {this.createRandomSentence}
             />
         );
+    }
+
+
+    createRandomSentence(){
+        let myQuote = quotesGenerator.getRandomSentence();
+
+        this.setState({
+            message:    myQuote.quote,
+            source:     myQuote.author,
+        });
     }
 }

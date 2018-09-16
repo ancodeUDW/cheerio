@@ -25,10 +25,13 @@ class ComicPanel extends React.Component {
         super(props);
         this.state = {
         };
+
+        this.renderDraggable    = this.renderDraggable.bind(this);
+        this.renderInnerContent = this.renderInnerContent.bind(this);
     }
 
     render() {
-        let {textMsg, style, onPanelPress, panelDirection, show} = this.props;
+        let {textMsg, style, onPanelPress, panelDirection, show, textSource, fontSize, draggable} = this.props;
         if (!show){
             return null
         }
@@ -43,16 +46,7 @@ class ComicPanel extends React.Component {
                     imageStyle = {{ resizeMode: 'stretch'}}
                     direction = {panelDirection}
                 >
-                    <ScrollView
-                        contentContainerStyle={containerStyle}
-                    >
-                        <StyledTouchableOpacity
-                            onPress={onPanelPress}
-                        >
-                            <StyledText>{textMsg}</StyledText>
-                        </StyledTouchableOpacity>
-                    </ScrollView>
-
+                    {this.renderDraggable()}
                 </StyledPanelView>
 
                 <StyledBottomPanelImage
@@ -62,6 +56,34 @@ class ComicPanel extends React.Component {
             </StyledView>
         );
     }
+
+    renderDraggable(){
+                    let {draggable} = this.props;
+
+                    return draggable ? (
+                                        <ScrollView  ontentContainerStyle={containerStyle}>
+                                            {this.renderInnerContent()}
+                                        </ScrollView>
+                                        )
+                                     : (
+                                         <React.Fragment>
+                                             {this.renderInnerContent()}
+                                         </React.Fragment>
+                                        )
+
+    }
+
+    renderInnerContent(){
+        let {textMsg, onPanelPress, textSource, fontSize} = this.props;
+
+        return (
+            <StyledTouchableOpacity onPress={onPanelPress} >
+                <StyledText fontSize = {fontSize}>{textMsg}</StyledText>
+                {!R.isNil(textSource) ? (<StyledSource>{textSource}</StyledSource>) : null}
+            </StyledTouchableOpacity>)
+    }
+
+
 }
 
 const GREY_PANEL_MARGINS = 25;
@@ -98,7 +120,15 @@ const StyledTouchableOpacity = styled.TouchableOpacity`
 const StyledText = styled.Text`
   text-align: center;
   color: #6f1a2f;
-  font-size: 20px;
+  font-size: ${props => props.fontSize}; //25px;
+  font-weight: bold;
+`;
+
+
+const StyledSource = styled.Text`
+  text-align: center;
+  color: rgba(111,26,47,0.67);
+  font-size: 15px;
   font-weight: bold;
 `;
 
@@ -123,6 +153,9 @@ const StyledTopPanelImage = styled(StyledPanelImage)`
 ComicPanel.defaultProps = {
     panelDirection: 'BOTTOM',
     show: true,
+    textSource: null,
+    draggable: false,
+    fontSize: '25px'
 };
 
 export default ComicPanel;

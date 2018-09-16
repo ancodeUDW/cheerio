@@ -15,7 +15,7 @@ let smileSad       = require('app/multimedia/common/smiles/sad.png');
 let smileNeutral   = require('app/multimedia/common/smiles/neutral.png');
 let smileHappy     = require('app/multimedia/common/smiles/happy.png');
 
-export default class SadConvo extends React.Component {
+export default class Home extends React.Component {
 
     constructor(props){
         super(props);

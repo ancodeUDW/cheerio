@@ -1,13 +1,10 @@
-import React                from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity, StatusBar  } from 'react-native';
-import { Dimensions }       from 'react-native'
-import styled               from "styled-components";
-import AnimateTwoImages     from 'app/components/AnimateTwoImages';
-import GradientBackground   from 'app/components/GradientBackground';
-import ConvoScreen          from 'app/components/ConvoScreen';
-import ImageButton          from 'app/components/ImageButton';
+import React                 from 'react';
+import ConvoScreen           from 'app/components/ConvoScreen';
+import cheerioSentencesService       from 'app/services/cheerioSentences';
 
-let candy          = require('app/multimedia/candies/chups.png');
+const cheersGenerator = cheerioSentencesService.cheersGenerator;
+
+let candy           = require('app/multimedia/candies/chups.png');
 let candy2          = require('app/multimedia/candies/chups.png');
 
 export default class SadConvo extends React.Component {
@@ -15,23 +12,31 @@ export default class SadConvo extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            sentence: cheersGenerator.getRandomSentence()
         };
+
+        this.createRandomSentence = this.createRandomSentence.bind(this);
     }
 
     render() {
         let {navigation} = this.props;
-
+        let {sentence} = this.state;
 
         return (
 
             <ConvoScreen
-                CharImg1={candy}
-                CharImg2={candy2}
-                blinkTime={3000}
-                textMsg={":("}
-                navigation={navigation}
+                CharImg1        = {candy}
+                CharImg2        = {candy2}
+                blinkTime       = {3000}
+                goToSad         = {this.createRandomSentence}
+                textMsg         = {sentence}
+                navigation      = {navigation}
             />
         );
+    }
+
+    createRandomSentence(){
+        this.setState({sentence: cheersGenerator.getRandomSentence()});
     }
 }
 

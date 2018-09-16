@@ -15,6 +15,9 @@ let smileSad       = require('app/multimedia/common/smiles/sad.png');
 let smileNeutral   = require('app/multimedia/common/smiles/neutral.png');
 let smileHappy     = require('app/multimedia/common/smiles/happy.png');
 
+const MAX_NORMAL_CHARS = 114;
+const MAX_DRAGGABLE_CHARS = 141; // todo: aprox
+
 
 class ConvoScreen extends React.Component {
 
@@ -36,15 +39,23 @@ class ConvoScreen extends React.Component {
             showTop, textSource,
             sourceStyle} = this.props;
 
-
+        let {DRAGGABLE, TEXT_SIZE} = R.cond([
+           [R.gte(MAX_NORMAL_CHARS),        () => ({DRAGGABLE: false,  TEXT_SIZE: '25px'})],
+           [R.gte(MAX_DRAGGABLE_CHARS),     () => ({DRAGGABLE: false,  TEXT_SIZE: '20px'})],
+           [R.lt(MAX_DRAGGABLE_CHARS),      () => ({DRAGGABLE: true,   TEXT_SIZE: '25px'})],
+           [R.T(MAX_DRAGGABLE_CHARS),       () => ({DRAGGABLE: false,  TEXT_SIZE: '25px'})]
+        ])(textMsg.length);
 
         return (
             <GradientBackground>
                 <ComicPanel
                     textMsg = {textMsg}
+                    textSource = {textSource}
                     style   = {{...panelStyle, width: '90%'}}
                     onPress = {onPanelPress}
                     show    = {showTop}
+                    fontSize = {TEXT_SIZE}
+                    draggable = {DRAGGABLE}
                 />
 
                 <AnimatedChar
@@ -64,15 +75,15 @@ class ConvoScreen extends React.Component {
 
                 <GreyPanel>
                     <StyledImageButton
-                        source = {smileHappy}
+                        source  = {smileHappy}
                         onPress = {this.goToHappy}
                     />
                     <StyledImageButton
-                        source = {smileNeutral}
+                        source  = {smileNeutral}
                         onPress = {this.goToNeutral}
                     />
                     <StyledImageButton
-                        source = {smileSad}
+                        source  = {smileSad}
                         onPress = {this.goToSad}
                     />
                 </GreyPanel>
@@ -82,21 +93,24 @@ class ConvoScreen extends React.Component {
 
 
     goToHappy(){
+        // this.props.goToHappy();
         let {navigation, goToHappy} = this.props;
         R.isNil(goToHappy) ? navigation.navigate('Happy')
-                           : goToHappy()
+                           : goToHappy();
     }
 
     goToNeutral(){
+        // this.props.goToNeutral();
         let {navigation, goToNeutral} = this.props;
         R.isNil(goToNeutral) ? navigation.navigate('Neutral')
-            : goToNeutral()
+                             : goToNeutral();
     }
 
     goToSad(){
+        // this.props.goToSad();
         let {navigation, goToSad} = this.props;
         R.isNil(goToSad) ? navigation.navigate('Sad')
-            : goToSad()
+                         : goToSad();
     }
 }
 
@@ -130,13 +144,15 @@ ConvoScreen.defaultProps = {
     // CharImg2,
     // blinkTime,
     textMsg: "test message",
-    textSource: "test source",
     panelStyle: {},
     imageStyle: {},
     sourceStyle: {},
     onPanelPress: () => {},
     showTop: true,
     showBottom: false,
+    // goToHappy: () => {},
+    // goToNeutral: () => {},
+    // goToSad: () => {}
 };
 
 
