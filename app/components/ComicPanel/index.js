@@ -4,6 +4,7 @@ import * as R               from 'ramda';
 import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 import { Dimensions }       from 'react-native'
 import styled               from "styled-components";
+import {Share}              from 'react-native';
 
 let panel           = require('app/multimedia/common/panel.png');
 let panelBottom     = require('app/multimedia/common/panelBottom.png');
@@ -27,6 +28,7 @@ class ComicPanel extends React.Component {
         };
 
         this.renderDraggable    = this.renderDraggable.bind(this);
+        this.shareInnerContent  = this.shareInnerContent.bind(this);
         this.renderInnerContent = this.renderInnerContent.bind(this);
     }
 
@@ -77,13 +79,17 @@ class ComicPanel extends React.Component {
         let {textMsg, onPanelPress, textSource, fontSize} = this.props;
 
         return (
-            <StyledTouchableOpacity onPress={onPanelPress} >
+            <StyledTouchableOpacity onPress={this.shareInnerContent} >
                 <StyledText fontSize = {fontSize}>{textMsg}</StyledText>
                 {!R.isNil(textSource) ? (<StyledSource>{textSource}</StyledSource>) : null}
             </StyledTouchableOpacity>)
     }
 
-
+    shareInnerContent(){
+        let {textMsg, onPanelPress, textSource, fontSize} = this.props;
+        console.log("test")
+        Share.share({message: textMsg, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"});
+    }
 }
 
 const GREY_PANEL_MARGINS = 25;

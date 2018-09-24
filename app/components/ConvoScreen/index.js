@@ -8,6 +8,7 @@ import AnimateTwoImages     from 'app/components/AnimateTwoImages';
 import GradientBackground   from 'app/components/GradientBackground';
 import ImageButton          from 'app/components/ImageButton';
 import ComicPanel           from 'app/components/ComicPanel';
+import AdBanner             from 'app/components/adBanner';
 
 let panel          = require('app/multimedia/common/panel.png');
 let bottomPanel    = require('app/multimedia/common/panelBottom.png');
@@ -24,11 +25,19 @@ class ConvoScreen extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            showAd: false
         };
 
+
+
+        this.addDelayBanner = this.addDelayBanner.bind(this);
         this.goToHappy      = this.goToHappy.bind(this);
         this.goToNeutral    = this.goToNeutral.bind(this);
         this.goToSad        = this.goToSad.bind(this);
+    }
+
+    componentDidMount(){
+        setTimeout(() => this.setState({showAd: true}), 5000)
     }
 
     render() {
@@ -87,10 +96,18 @@ class ConvoScreen extends React.Component {
                         onPress = {this.goToSad}
                     />
                 </GreyPanel>
+                {this.addDelayBanner()}
+
             </GradientBackground>
         );
     }
 
+    addDelayBanner(){
+        let {showAd} = this.state;
+        return showAd ? (
+            <AdBanner type={'relative'}/>
+        ) : false;
+    }
 
     goToHappy(){
         // this.props.goToHappy();
