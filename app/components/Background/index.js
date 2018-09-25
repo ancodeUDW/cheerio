@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, View, Image, ImageBackground } from 'react-na
 import styled from "styled-components";
 import AnimateTwoImages from 'app/components/AnimateTwoImages';
 
-let logoImg        = require('app/multimedia/common/background.png');
+let logoImg        = require('app/multimedia/images/common/background.png');
 
 export default class App extends React.Component {
 

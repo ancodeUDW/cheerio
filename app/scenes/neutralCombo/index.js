@@ -5,8 +5,8 @@ import cheerioSentencesService       from 'app/services/cheerioSentences';
 const jokesGenerator = cheerioSentencesService.jokesGenerator;
 
 
-let muffin          = require('app/multimedia/candies/muffin.png');
-let muffin2         = require('app/multimedia/candies/muffin2.png');
+let muffin          = require('app/multimedia/images/candies/muffin.png');
+let muffin2         = require('app/multimedia/images/candies/muffin2.png');
 
 export default class NeutralConvo extends React.Component {
 

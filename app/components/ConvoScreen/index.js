@@ -10,11 +10,11 @@ import ImageButton          from 'app/components/ImageButton';
 import ComicPanel           from 'app/components/ComicPanel';
 import AdBanner             from 'app/components/adBanner';
 
-let panel          = require('app/multimedia/common/panel.png');
-let bottomPanel    = require('app/multimedia/common/panelBottom.png');
-let smileSad       = require('app/multimedia/common/smiles/sad.png');
-let smileNeutral   = require('app/multimedia/common/smiles/neutral.png');
-let smileHappy     = require('app/multimedia/common/smiles/happy.png');
+let panel          = require('app/multimedia/images/common/panel.png');
+let bottomPanel    = require('app/multimedia/images/common/panelBottom.png');
+let smileSad       = require('app/multimedia/images/common/smiles/sad.png');
+let smileNeutral   = require('app/multimedia/images/common/smiles/neutral.png');
+let smileHappy     = require('app/multimedia/images/common/smiles/happy.png');
 
 const MAX_NORMAL_CHARS = 114;
 const MAX_DRAGGABLE_CHARS = 141; // todo: aprox
@@ -28,7 +28,7 @@ class ConvoScreen extends React.Component {
             showAd: false
         };
 
-
+        this.isMonted = false;
 
         this.addDelayBanner = this.addDelayBanner.bind(this);
         this.goToHappy      = this.goToHappy.bind(this);
@@ -37,7 +37,12 @@ class ConvoScreen extends React.Component {
     }
 
     componentDidMount(){
-        setTimeout(() => this.setState({showAd: true}), 5000)
+        this.isMonted = true;
+        setTimeout(() => this.isMonted ? this.setState({showAd: true}) : null, 5000)
+    }
+
+    componentWillUnmount(){
+        this.isMonted = false;
     }
 
     render() {
@@ -49,10 +54,10 @@ class ConvoScreen extends React.Component {
             sourceStyle} = this.props;
 
         let {DRAGGABLE, TEXT_SIZE} = R.cond([
-           [R.gte(MAX_NORMAL_CHARS),        () => ({DRAGGABLE: false,  TEXT_SIZE: '25px'})],
+           [R.gte(MAX_NORMAL_CHARS),        () => ({DRAGGABLE: false,  TEXT_SIZE: '23px'})],
            [R.gte(MAX_DRAGGABLE_CHARS),     () => ({DRAGGABLE: false,  TEXT_SIZE: '20px'})],
-           [R.lt(MAX_DRAGGABLE_CHARS),      () => ({DRAGGABLE: true,   TEXT_SIZE: '25px'})],
-           [R.T(MAX_DRAGGABLE_CHARS),       () => ({DRAGGABLE: false,  TEXT_SIZE: '25px'})]
+           [R.lt(MAX_DRAGGABLE_CHARS),      () => ({DRAGGABLE: true,   TEXT_SIZE: '20px'})],
+           [R.T(MAX_DRAGGABLE_CHARS),       () => ({DRAGGABLE: false,  TEXT_SIZE: '20px'})]
         ])(textMsg.length);
 
         return (
@@ -104,9 +109,7 @@ class ConvoScreen extends React.Component {
 
     addDelayBanner(){
         let {showAd} = this.state;
-        return showAd ? (
-            <AdBanner type={'relative'}/>
-        ) : false;
+        return <AdBanner type={'relative'}/>;
     }
 
     goToHappy(){

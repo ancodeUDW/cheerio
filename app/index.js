@@ -4,7 +4,6 @@ import {
 
 import IntroScreen      from './scenes/intro';
 import HomeScreen       from './scenes/home';
-import MessageScreen    from './scenes/message';
 import HappyScreen      from './scenes/happyCombo';
 import NeutralScreen    from './scenes/neutralCombo';
 import SadScreen        from './scenes/sadCombo';
@@ -14,7 +13,6 @@ const Cherio = createDrawerNavigator(
     {
         Intro:      { screen: IntroScreen },
         Home:       { screen: HomeScreen },
-        Message:    { screen: MessageScreen },
         Happy:      { screen: HappyScreen },
         Neutral:    { screen: NeutralScreen },
         Sad:        { screen: SadScreen },

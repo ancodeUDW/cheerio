@@ -2,7 +2,7 @@ import React                from 'react';
 import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import styled               from "styled-components";
 
-export default class App extends React.Component {
+export default class ImageButton extends React.Component {
 
     constructor(props){
         super(props);

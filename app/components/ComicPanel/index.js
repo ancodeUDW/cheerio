@@ -4,11 +4,12 @@ import * as R               from 'ramda';
 import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 import { Dimensions }       from 'react-native'
 import styled               from "styled-components";
-import {Share}              from 'react-native';
+import {Share, Linking}     from 'react-native';
+import {Font} from "expo";
 
-let panel           = require('app/multimedia/common/panel.png');
-let panelBottom     = require('app/multimedia/common/panelBottom.png');
-let panelTop        = require('app/multimedia/common/panelTop.png');
+let panel           = require('app/multimedia/images/common/panel.png');
+let panelBottom     = require('app/multimedia/images/common/panelBottom.png');
+let panelTop        = require('app/multimedia/images/common/panelTop.png');
 // let panelLeft       = require('app/multimedia/common/panelLeft.png');
 // let panelRight      = require('app/multimedia/common/panelRight.png');
 
@@ -25,12 +26,21 @@ class ComicPanel extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            fontLoaded: false
         };
 
         this.renderDraggable    = this.renderDraggable.bind(this);
         this.shareInnerContent  = this.shareInnerContent.bind(this);
         this.renderInnerContent = this.renderInnerContent.bind(this);
     }
+
+
+    componentDidMount() {
+        Font.loadAsync({
+            'catamaran': require('app/multimedia/fonts/catamaran/Catamaran-Regular.ttf'),
+        }).then(() => this.setState({ fontLoaded: true }));
+    }
+
 
     render() {
         let {textMsg, style, onPanelPress, panelDirection, show, textSource, fontSize, draggable} = this.props;
@@ -76,19 +86,20 @@ class ComicPanel extends React.Component {
     }
 
     renderInnerContent(){
-        let {textMsg, onPanelPress, textSource, fontSize} = this.props;
+        let {textMsg, onPanelPress, textSource, fontSize, email} = this.props;
 
-        return (
+        return this.state.fontLoaded ? (
             <StyledTouchableOpacity onPress={this.shareInnerContent} >
-                <StyledText fontSize = {fontSize}>{textMsg}</StyledText>
+                <StyledText style={{ fontFamily: 'catamaran' }} fontSize = {fontSize}>{textMsg}</StyledText>
                 {!R.isNil(textSource) ? (<StyledSource>{textSource}</StyledSource>) : null}
-            </StyledTouchableOpacity>)
+            </StyledTouchableOpacity>) : null;
     }
 
     shareInnerContent(){
-        let {textMsg, onPanelPress, textSource, fontSize} = this.props;
-        console.log("test")
-        Share.share({message: textMsg, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"});
+        let {textMsg, onPanelPress, textSource, fontSize, email} = this.props;
+
+        R.isNil(email) ? Share.share({message: textMsg, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"})
+                       : Linking.openURL('mailto:' + email);
     }
 }
 
@@ -127,7 +138,6 @@ const StyledText = styled.Text`
   text-align: center;
   color: #6f1a2f;
   font-size: ${props => props.fontSize}; //25px;
-  font-weight: bold;
 `;
 
 
@@ -161,7 +171,8 @@ ComicPanel.defaultProps = {
     show: true,
     textSource: null,
     draggable: false,
-    fontSize: '25px'
+    fontSize: '25px',
+    email: null,
 };
 
 export default ComicPanel;

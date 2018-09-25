@@ -15,7 +15,7 @@ export default class AddBanner extends React.Component {
             <AdMobBanner
                 style={this.type !== 'relative' ? styles.bottomBanner : {}}
                 bannerSize="smartBannerPortrait"
-                adUnitID={config.ADMOB.TEST.BANNER_ID}
+                adUnitID={config.ADMOB.BANNER_ID}
                 onDidFailToReceiveAdWithError={this.bannerError}
             />
         );
@@ -29,7 +29,9 @@ export default class AddBanner extends React.Component {
 const styles = StyleSheet.create({
     bottomBanner: {
     },
+
     container: {
+        height: 50,
         flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",

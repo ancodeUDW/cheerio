@@ -4,8 +4,8 @@ import styled               from "styled-components";
 import AnimateTwoImages     from 'app/components/AnimateTwoImages';
 import GradientBackground           from 'app/components/GradientBackground';
 
-let faceOpenImg    = require('app/multimedia/startScreen/face1.png');
-let faceClosedImg  = require('app/multimedia/startScreen/face2.png');
+let faceOpenImg    = require('app/multimedia/images/startScreen/face1.png');
+let faceClosedImg  = require('app/multimedia/images/startScreen/face2.png');
 // let logoImg        = require('app/multimedia/startScreen/logo.png');
 
 export default class App extends React.Component {
@@ -15,7 +15,19 @@ export default class App extends React.Component {
         this.state = {
         };
 
+        this.mounted = false;
+
         this.goToChatScreen = this.goToChatScreen.bind(this);
+    }
+
+    componentDidMount(){
+        this.mounted = true;
+        setTimeout(() => this.mounted ? this.goToChatScreen() : null, 3000)
+    }
+
+    componentWillUnmount(){
+        this.mounted = false;
+
     }
 
     render() {
@@ -29,10 +41,6 @@ export default class App extends React.Component {
                         image1  = {faceOpenImg}
                         image2  = {faceClosedImg}
                     />
-
-                    {/*<StyledImg*/}
-                        {/*source = {logoImg}*/}
-                    {/*/>*/}
                 </StyledTouchableOpacity>
             </GradientBackground>
         );

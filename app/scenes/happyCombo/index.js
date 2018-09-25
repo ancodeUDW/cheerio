@@ -4,8 +4,8 @@ import cheerioSentencesService      from 'app/services/cheerioSentences';
 
 const quotesGenerator  = cheerioSentencesService.quotesGenerator;
 
-let candy           = require('app/multimedia/candies/candy.png');
-let candy2          = require('app/multimedia/candies/candy2.png');
+let candy           = require('app/multimedia/images/candies/candy.png');
+let candy2          = require('app/multimedia/images/candies/candy2.png');
 
 
 export default class HappyConvo extends React.Component {
