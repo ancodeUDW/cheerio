@@ -19,6 +19,8 @@ acode@gmail.com
 * the app shows a famous interesting quote from an internal list. you can click to happy face to go to next quote
 * the system uses a randomly cheerful generated sentences
 * sentences are saved in local
+* Share the sentence in your social networks
+* add advertisements
 
 ### Done design
 * create an interesting interface. Likely using gradients, but maybe we can make the gradient animated
@@ -26,14 +28,19 @@ acode@gmail.com
   * clever-like guy or girl for the quotes -> changed to candy
   * smiling guy or girl for the cheerful quotes -> changed to candy
   * check another type for custom list
+  
+### To do
+* make smaller the spaces between lines
+* add sound to the clicks
 
 ### Other things for the future:
 * the app let you input your own list that helps you remember it in the future
 * maybe make a test to remember the list?
 * you can program the app to remind you every X time about a sentences
-* Share the sentence in your social networks
 * backend for new sentences
-* add advertisements - but not in the sad part
+
+### Bugs
+* Now when you click in the balloon, shares the sentence. However, that prevents it for dragging the text if is too big
   
 ### Todo design
 * when clicking to the candies, stars will appear around and will disappear after a while.

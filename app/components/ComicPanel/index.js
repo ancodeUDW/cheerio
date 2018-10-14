@@ -96,9 +96,13 @@ class ComicPanel extends React.Component {
     }
 
     shareInnerContent(){
-        let {textMsg, onPanelPress, textSource, fontSize, email} = this.props;
+        let {textMsg, onPanelPress, textSource, fontSize, email, enableShare} = this.props;
 
-        R.isNil(email) ? Share.share({message: textMsg, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"})
+        if (!enableShare) return false;
+
+        let myMessage = `${textMsg} ${!R.isNil(textSource) ? '\n\nsource: ' + textSource : null}`;
+
+        R.isNil(email) ? Share.share({message: myMessage, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"})
                        : Linking.openURL('mailto:' + email);
     }
 }
@@ -173,6 +177,7 @@ ComicPanel.defaultProps = {
     draggable: false,
     fontSize: '25px',
     email: null,
+    enableShare: true,
 };
 
 export default ComicPanel;

@@ -6,6 +6,7 @@ import AnimateTwoImages     from 'app/components/AnimateTwoImages';
 import GradientBackground   from 'app/components/GradientBackground';
 import ConvoScreen          from 'app/components/ConvoScreen';
 import ImageButton          from 'app/components/ImageButton';
+import ComicPanel from "../../components/ComicPanel";
 
 let candy          = require('app/multimedia/images/candies/candy.png');
 let candy2          = require('app/multimedia/images/candies/candy2.png');
@@ -32,8 +33,9 @@ export default class Home extends React.Component {
                 CharImg1={candy}
                 CharImg2={candy2}
                 blinkTime={3000}
-                textMsg={"Hello! How do you feel today? :)"}
+                textMsg={"How are you feeling today?\nUse the buttons below we will tell you something :)"}
                 navigation={navigation}
+                enableShare = { false }
             />
         );
     }

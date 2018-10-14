@@ -51,7 +51,7 @@ class ConvoScreen extends React.Component {
             panelStyle, imageStyle,
             onPanelPress, showBottom,
             showTop, textSource,
-            sourceStyle} = this.props;
+            sourceStyle, enableShare} = this.props;
 
         let {DRAGGABLE, TEXT_SIZE} = R.cond([
            [R.gte(MAX_NORMAL_CHARS),        () => ({DRAGGABLE: false,  TEXT_SIZE: '23px'})],
@@ -70,7 +70,8 @@ class ConvoScreen extends React.Component {
                     show    = {showTop}
                     fontSize = {TEXT_SIZE}
                     draggable = {DRAGGABLE}
-                />
+                    enableShare = { enableShare }
+            />
 
                 <AnimatedChar
                     timming = {blinkTime}
@@ -85,6 +86,7 @@ class ConvoScreen extends React.Component {
                     onPress = {onPanelPress}
                     panelDirection = {"TOP"}
                     show    = {showBottom}
+                    enableShare = { enableShare }
                 />
 
                 <GreyPanel>
@@ -170,6 +172,7 @@ ConvoScreen.defaultProps = {
     onPanelPress: () => {},
     showTop: true,
     showBottom: false,
+    enableShare: true,
     // goToHappy: () => {},
     // goToNeutral: () => {},
     // goToSad: () => {}
