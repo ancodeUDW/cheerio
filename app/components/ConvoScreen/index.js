@@ -9,6 +9,7 @@ import GradientBackground   from 'app/components/GradientBackground';
 import ImageButton          from 'app/components/ImageButton';
 import ComicPanel           from 'app/components/ComicPanel';
 import AdBanner             from 'app/components/adBanner';
+import Expo                 from 'expo';
 
 let panel          = require('app/multimedia/images/common/panel.png');
 let bottomPanel    = require('app/multimedia/images/common/panelBottom.png');
@@ -19,7 +20,22 @@ let smileHappy     = require('app/multimedia/images/common/smiles/happy.png');
 const MAX_NORMAL_CHARS = 114;
 const MAX_DRAGGABLE_CHARS = 141; // todo: aprox
 
-
+async function playSound(){
+    // Todo: buggy, lets fix it in the future
+    // let soundObject           = new Expo.Audio.Sound();
+    // let result = null;
+    // try {
+    //     await soundObject.loadAsync(require('app/multimedia/sound/clickSound.mp3'));
+    //     result = soundObject.playAsync();
+    //     // Your sound is playing!
+    // } catch (error) {
+    //     result = Promise.resolve;
+    //     // An error occurred!
+    // }
+    //
+    // return result;
+    return Promise.resolve();
+}
 class ConvoScreen extends React.Component {
 
     constructor(props){
@@ -116,23 +132,33 @@ class ConvoScreen extends React.Component {
 
     goToHappy(){
         // this.props.goToHappy();
-        let {navigation, goToHappy} = this.props;
-        R.isNil(goToHappy) ? navigation.navigate('Happy')
-                           : goToHappy();
+        playSound()
+            .then(() => {
+                let {navigation, goToHappy} = this.props;
+                R.isNil(goToHappy) ? navigation.navigate('Happy')
+                                   : goToHappy();
+            });
     }
 
     goToNeutral(){
         // this.props.goToNeutral();
-        let {navigation, goToNeutral} = this.props;
-        R.isNil(goToNeutral) ? navigation.navigate('Neutral')
-                             : goToNeutral();
+        playSound()
+            .then(() => {
+                let {navigation, goToNeutral} = this.props;
+                R.isNil(goToNeutral) ? navigation.navigate('Neutral')
+                    : goToNeutral();
+            });
+
     }
 
     goToSad(){
         // this.props.goToSad();
-        let {navigation, goToSad} = this.props;
-        R.isNil(goToSad) ? navigation.navigate('Sad')
-                         : goToSad();
+        playSound()
+            .then(() => {
+                let {navigation, goToSad} = this.props;
+                R.isNil(goToSad) ? navigation.navigate('Sad')
+                    : goToSad();
+            });
     }
 }
 

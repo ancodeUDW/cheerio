@@ -5,7 +5,8 @@ import { Button, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity  } 
 import { Dimensions }       from 'react-native'
 import styled               from "styled-components";
 import {Share, Linking}     from 'react-native';
-import {Font} from "expo";
+import {Font}               from "expo";
+import Expo                 from "expo";
 
 let panel           = require('app/multimedia/images/common/panel.png');
 let panelBottom     = require('app/multimedia/images/common/panelBottom.png');
@@ -20,6 +21,22 @@ let containerStyle = {
     display: 'flex',
     // flex: 1
 };
+
+
+async function playSound(){
+    // Todo: buggy, lets fix it in the future
+    // let soundObject           = new Expo.Audio.Sound();
+    //
+    // try {
+    //     await soundObject.loadAsync(require('app/multimedia/sound/clickSound.mp3'));
+    //     await soundObject.playAsync();
+    //     return Promise.resolve();
+    //     // Your sound is playing!
+    // } catch (error) {
+    //     return Promise.reject();
+    //     // An error occurred!
+    // }
+}
 
 class ComicPanel extends React.Component {
 
@@ -95,15 +112,20 @@ class ComicPanel extends React.Component {
             </StyledTouchableOpacity>) : null;
     }
 
+
+
     shareInnerContent(){
         let {textMsg, onPanelPress, textSource, fontSize, email, enableShare} = this.props;
 
         if (!enableShare) return false;
 
-        let myMessage = `${textMsg} ${!R.isNil(textSource) ? '\n\nsource: ' + textSource : null}`;
+        playSound()
+            .then(() => {
+                let myMessage = `${textMsg} ${!R.isNil(textSource) ? '\n\nsource: ' + textSource : null}`;
 
-        R.isNil(email) ? Share.share({message: myMessage, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"})
-                       : Linking.openURL('mailto:' + email);
+                R.isNil(email) ? Share.share({message: myMessage, title: "Cheerio shares"}, {dialogTitle: "Cheerio wants to share!"})
+                    : Linking.openURL('mailto:' + email);
+            })
     }
 }
 

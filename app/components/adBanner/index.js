@@ -8,16 +8,28 @@ import {
     AdMobRewarded
 } from 'expo';
 
+const styles = StyleSheet.create({
+    bottomBanner: {
+    },
+
+    container: {
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center"
+    }
+});
 
 export default class AddBanner extends React.Component {
     render() {
         return (
-            <AdMobBanner
-                style={this.type !== 'relative' ? styles.bottomBanner : {}}
-                bannerSize="smartBannerPortrait"
-                adUnitID={config.ADMOB.BANNER_ID}
-                onDidFailToReceiveAdWithError={this.bannerError}
-            />
+            <View style={styles.container}>
+                <AdMobBanner
+                    style={this.type !== 'relative' ? styles.bottomBanner : {}}
+                    bannerSize="smartBannerPortrait"
+                    adUnitID={config.ADMOB.BANNER_ID}
+                    onDidFailToReceiveAdWithError={this.bannerError}
+                />
+            </View>
         );
     }
 
@@ -26,15 +38,4 @@ export default class AddBanner extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
-    bottomBanner: {
-    },
 
-    container: {
-        height: 50,
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center"
-    }
-});
