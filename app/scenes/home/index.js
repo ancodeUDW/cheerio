@@ -33,7 +33,7 @@ export default class Home extends React.Component {
                 CharImg1={candy}
                 CharImg2={candy2}
                 blinkTime={3000}
-                textMsg={"How are you feeling today?\nUse the buttons below we will tell you something :)"}
+                textMsg={"How are you feeling today?\nUse the buttons below and we will tell you something :)"}
                 navigation={navigation}
                 enableShare = { false }
             />
