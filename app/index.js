@@ -1,4 +1,5 @@
 import {
+    createAppContainer,
     createDrawerNavigator,
 } from 'react-navigation';
 
@@ -9,7 +10,7 @@ import NeutralScreen    from './scenes/neutralCombo';
 import SadScreen        from './scenes/sadCombo';
 import AboutScreen      from './scenes/about';
 
-const Cherio = createDrawerNavigator(
+const Cheerio = createDrawerNavigator(
     {
         Intro:      { screen: IntroScreen },
         Home:       { screen: HomeScreen },
@@ -23,4 +24,6 @@ const Cherio = createDrawerNavigator(
     }
 );
 
-export default Cherio;
+const App = createAppContainer(Cheerio);
+
+export default App;

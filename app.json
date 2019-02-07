@@ -2,8 +2,8 @@
   "expo": {
     "name": "Cheerio",
     "description": "A small app that tells you ramdom sentences so it can cheer you up",
-    "version": "1.0.1",
-    "sdkVersion": "27.0.0",
+    "version": "1.0.0",
+    "sdkVersion": "32.0.0",
     "platforms": ["android"],
     "slug": "cheerio",
     "icon": "./app/multimedia/android.png",
